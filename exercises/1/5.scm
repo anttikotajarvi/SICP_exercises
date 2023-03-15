@@ -32,7 +32,7 @@
 ; normal-order -> fully expand and then reduce
 ; Expansion
     (test 0 (p))
-    (if (= 0 0) 0 (p)))
+    (if (= 0 0) 0 (p))
 ; Reduction
     (if true 0 (p))
     0
