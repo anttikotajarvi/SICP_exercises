@@ -27,14 +27,14 @@
 ; Implemented with the current ´sqrt-iter´ algorithm, it would not perform 
 ;  enough cycles for a sufficiently accurate result
 
-; For larger numbers, the guess needs to be exceedingly closer to the
 ;  correct answer to yield a positive result.
+; For larger numbers, the guess needs to be exceedingly closer to the
 ; For example
     (define million 1000000)
-    (g? 999.9999995 million)
+    (good-enough? 999.9999995 million)
 ;=> false
     (define ten-billion 10000000000)
-    (g? 99999.999999995 ten-billion)
+    (good-enough? 99999.999999995 ten-billion)
 ;=> false
 ; The guesses in both of the examples are the largest(*) ones
 ;  that result in false per their quotient
@@ -53,5 +53,13 @@
 ; Design a square-root procedure that uses this kind of end
 ;  test. Does this work better for small and large numbers?"
 
+; The simplest answer I cam up was:
+(define (good-enough? guess x)
+    (< (abs (- (square guess) x)) (/ guess 1000)))
 
-
+(good-enough? 999.9999 million)
+;=> true
+(good-enough? 99999.9999 ten-billion)
+;=> true
+(good-enough? 0.0002 0.0002)
+;=> false
