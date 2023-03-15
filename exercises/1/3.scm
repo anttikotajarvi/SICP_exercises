@@ -1,6 +1,11 @@
-;Exercise 1.3: Deﬁne a procedure that takes three numbers
-;as arguments and returns the sum of the squares of the two
-;larger numbers.
+; 1. Building Abstractions with Procedures
+
+; Exercise 1.3 
+; Deﬁne a procedure that takes three numbers
+; as arguments and returns the sum of the squares of the two
+; larger numbers.
+;____________________________________________________________
+
 (define (bigger a b) 
         (if (> b a)
             b
