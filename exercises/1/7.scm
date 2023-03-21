@@ -25,10 +25,11 @@
 ; Guessing the square root of 0.0002 any number 
 ;  smaller than 0.02 returns true
 ; Implemented with the current ´sqrt-iter´ algorithm, it would not perform 
-;  enough cycles for a sufficiently accurate result
+;  enough cycles for a sufficiently accurate result.
 
-;  correct answer to yield a positive result.
 ; For larger numbers, the guess needs to be exceedingly closer to the
+;  correct answer to yield a positive result.
+
 ; For example
     (define million 1000000)
     (good-enough? 999.9999995 million)
@@ -37,7 +38,7 @@
     (good-enough? 99999.999999995 ten-billion)
 ;=> false
 ; The guesses in both of the examples are the largest(*) ones
-;  that result in false per their quotient
+;  that result in false per their quotient.
 ; You can observe the increasing decimal accuracy required to yield true
 ; When using the ´sqrt-iter´ implementation with the smaller numbers,
 ;  we werent doing enough cycles to achieve a accurate result, but
@@ -53,13 +54,15 @@
 ; Design a square-root procedure that uses this kind of end
 ;  test. Does this work better for small and large numbers?"
 
-; The simplest answer I cam up was:
+; The simplest answer I came up with was:
 (define (good-enough? guess x)
     (< (abs (- (square guess) x)) (/ guess 1000)))
 
+; "Does this work better for small and large numbers?"
 (good-enough? 999.9999 million)
 ;=> true
 (good-enough? 99999.9999 ten-billion)
 ;=> true
 (good-enough? 0.0002 0.0002)
 ;=> false
+; Seems to
