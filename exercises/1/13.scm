@@ -35,7 +35,7 @@
 
 ; Initially did this but realized that while the process 
 ;  for calculating the number for the triangle is recursive,
-;  the iterating through the rows is, indeed, iterative.
+;  the iterating through the rows is--indeed--iterative.
     (define (pascals-triangle depth)
         (define (iter nth-char nth-row)
         (if (<= nth-row depth)
