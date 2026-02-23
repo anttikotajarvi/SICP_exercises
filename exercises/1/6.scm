@@ -29,3 +29,6 @@
 ;=> Stack overflow
 ; This happens since the operands of ´new-if´ are evaluated 
 ;  where as with the special form ´if´ only evaluates one.
+
+; Scheme (applicative-order) calls all arguments first, then procedure
+; Under a substitution model (normal-order) this would work

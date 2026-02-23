@@ -10,13 +10,15 @@
 ;____________________________________________________________
 
 ; Recursive process (literal translation)
-(define (f n) (if (< n 3) n 
-    (+ (f (- n 1)) 
-        (* 2 (f (- n 2)))
-        (* 3 (f (- n 3)))) ))
+(define (f-rec n) 
+    (if (< n 3) 
+        n 
+        (+  (f-rec (- n 1)) 
+            (* 2 (f-rec (- n 2)))
+            (* 3 (f-rec (- n 3)))) ))
 
 ; Iterative
- (define (f n) 
+ (define (f-iter n) 
     (define (iter a b c count)
         (if (= count n)
             a

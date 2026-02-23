@@ -12,7 +12,6 @@
 ; Using the substitution model, illustrate the process gener-
 ; ated by each procedure in evaluating (+ 4 5) . Are these
 ; processes iterative or recursive?
-;  abstraction of these square-root and cube-root procedures.)
 ;____________________________________________________________
 
 ; Note that `inc` wont be expanded, as per the substitution model to not introduce a
@@ -39,8 +38,7 @@
     (inc (inc 7))
     (inc 8)
     9
-; Looks like a recursive process
-; Don't know how to elaborate
+; Deferred operations would signify a recursive process here
 
     (define (+ a b)
         (if (= a 0) b (+ (dec a) (inc b))))

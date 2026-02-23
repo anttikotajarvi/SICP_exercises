@@ -39,5 +39,5 @@
 ; (p) is never evaluated
 ; Result: 0
 
-
+; in short: p = infinite recursion on both kinds of interpreters, only applicative order tries evaluating it from 'test'
 
