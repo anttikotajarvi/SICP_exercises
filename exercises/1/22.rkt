@@ -39,4 +39,31 @@
 ;  proportional to the number of steps required for the 
 ;  computation?
 ; ______________________________________________________________
+(#%require "21.rkt")
+(define (prime? n)
+  (and (> n 1) (= n (smallest-divisor n))))
 
+(define (search-for-primes start max)
+  (define (iter num)
+    (if (< num max)
+      (cond ((even? num) (iter (+ num 1)))
+      (else (begin
+        (timed-prime-test num)
+        (iter (+ num 2)))))))
+  
+  (iter start))
+
+; This exercise is weird if im not understanding it wrong.
+; We made the search-for-primes function but now we need to check 
+;  the time for primes over large numbers: we dont need this 
+;  function for it.
+
+(timed-prime-test 1009)     ; 1009 *** 9
+(timed-prime-test 100003)   ; 100003 *** 9
+(timed-prime-test 1000003)  ; 1000003 *** 20
+
+; The actual results vary too much to make any conclusion, 
+;  these are just an example. 
+; Mostly just measuring noise here so cannot say anything 
+;  about the time complexity, except:
+;   Usually the biggest one is slowest. 

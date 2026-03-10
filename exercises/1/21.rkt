@@ -13,6 +13,7 @@
         (else (find-divisor n (+ test-divisor 1)))))
 
 (define (smallest-divisor n) (find-divisor n 2))
+(#%provide smallest-divisor)
 
 (smallest-divisor 199)
 (smallest-divisor 1999)
