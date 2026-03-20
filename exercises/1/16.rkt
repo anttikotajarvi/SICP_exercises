@@ -15,7 +15,7 @@
 ;  algorithms.)
 ; ______________________________________________________________
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 
 ; The recursive approach
 ; b^n = ( b^(n/2) )^2   if n is even

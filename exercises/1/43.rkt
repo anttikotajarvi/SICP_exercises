@@ -19,7 +19,7 @@
 ;  [Exercise 1.42].
 ; ______________________________________________________________
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 (define (repeated f n)
   (define (iter result n)
     (if (<= n 1)

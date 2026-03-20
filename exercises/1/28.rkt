@@ -30,7 +30,7 @@
 ;  return 0. 
 ; ______________________________________________________________
 
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 
 ; Alternate form of Fermat's Little Theorem
 ; "if n is prime, and n > a > 0

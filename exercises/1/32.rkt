@@ -19,7 +19,7 @@
 ;     generates a recursive process.
 ; ______________________________________________________________
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 ; Recursive
 (define (accumulate-rec combiner null-value term a next b)
   (define (rec a)

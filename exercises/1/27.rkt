@@ -10,7 +10,7 @@
 
 ; i.e. ... write a procudere that tests wheter a^n % n = a % n
 
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 (define (fermat-congruence? a n)
   (= (expmod a n n) (remainder a n)))
 

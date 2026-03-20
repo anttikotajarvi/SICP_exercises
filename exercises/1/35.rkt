@@ -26,7 +26,7 @@
 
 ;; Compute phi with the fixed point procedure
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 (define tolerance 0.00001)
 (define (fixed-point f first-guess) 
   (define (close-enough? v1 v2)

@@ -6,7 +6,7 @@
 ;  to aproximate zeros of the cubic: x^3 + ax^2 + bx + c
 ; ______________________________________________________________
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 
 (define (cubic a b c)
   (lambda (x) (+ (* x x x)

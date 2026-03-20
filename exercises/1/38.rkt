@@ -11,7 +11,7 @@
 ; ______________________________________________________________
 
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 
 (define (N i) 1)
 

@@ -12,5 +12,5 @@
 (define (compose f g)
   (lambda (x) (f (g x))))
 
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 (inspect ((compose square inc) 6)); 49

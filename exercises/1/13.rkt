@@ -8,7 +8,7 @@
 ; ________________________________________________________________________
 
 #lang sicp
-(#%require "_dependencies.rkt")
+(#%require "../lib.rkt")
 
 ; Distance from phi^n/sqrt(5) to Fib(n) is psi^n/sqrt(5)
 
