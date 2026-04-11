@@ -158,10 +158,10 @@
 
 (define (repeated f n)
   (define (iter result n)
-    (if (<= n 1)
+    (if (= n 0)
         result
         (iter (compose f result) (dec n))))
-  (iter f n))
+  (iter (lambda (x) x) n))
 
 (#%provide double compose repeated)
 
@@ -192,4 +192,44 @@
       (cons (accumulate op init (map car seqs))
             (accumulate-n op init (map cdr seqs)))))
 
-(#%provide accumulate enumerate-tree accumulate-n)
+(define (fold-left op initial sequence)
+  (define (iter result rest)
+    (if (null? rest)
+        result
+        (iter (op result (car rest))
+              (cdr rest))))
+  (iter initial sequence))
+
+(define fold-right accumulate)
+
+(define (enumerate-interval i max)
+  (define (iter i res)
+    (if (> i max)
+        res
+        (iter (inc i) (append res (list i)))))
+  (iter i '()))
+
+(define (flatmap proc seq)
+  (accumulate append nil (map proc seq)))
+
+(define (filter predicate sequence)
+  (cond ((null? sequence) nil)
+        ((predicate (car sequence))
+         (cons (car sequence)
+               (filter predicate (cdr sequence))))
+        (else
+         (filter predicate (cdr sequence)))))
+
+(define (unique-pairs n)
+  (flatmap
+    (lambda (i)
+      (map (lambda (j) (list i j))
+           (enumerate-interval 1 (- i 1))))
+    (enumerate-interval 1 n)))
+
+(define (sum-list sequence)
+  (accumulate + 0 sequence))
+
+(define (nth n lst)
+  (car ((repeated cdr n) lst)))
+(#%provide accumulate enumerate-tree accumulate-n fold-left fold-right enumerate-interval flatmap filter unique-pairs sum-list nth)
