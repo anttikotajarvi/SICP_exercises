@@ -15,12 +15,3 @@ The exercises are structured for running with `mit-scheme` but the Berkeleys web
 From exercisese 1.12 onward: I have opted to use Racket with the SICP language pack to use the weird "subset" of Scheme used in the book, based on the fifth revision (R5RS)
 
 [SICP lang](https://docs.racket-lang.org/sicp-manual/index.html)
-
-
-## Notes
-### Chapter 1
-#### Termination case semantics in recursive vs. iterative processes
-The condition that ends the calls is referred to as the termination case in both recursive and iterative processes. Usually in recursive procedures the termination case is called the `base case` but this is not accurate to the iterative procedure.
-
-So maybe for the iterative procedure call it:
-`stop condition`, since it usually just stops the call chain. This could be inaccurate in scenarios where there is a final transformation applied, but that should propably be deferred outside of the iterator anyway.
