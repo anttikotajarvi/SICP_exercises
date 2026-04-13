@@ -83,4 +83,4 @@
   (not (accumulate (lambda (x y) (or x y)) ;; 'or' is a special form and apparently cannot be passed bare
          #f (result-list))))
 
-(inspect (queens 4))
+(inspect (queens 6))
