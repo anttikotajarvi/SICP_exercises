@@ -158,10 +158,10 @@
 
 (define (repeated f n)
   (define (iter result n)
-    (if (= n 0)
+    (if (<= n 1)
         result
         (iter (compose f result) (dec n))))
-  (iter (lambda (x) x) n))
+  (iter f n))
 
 (#%provide double compose repeated)
 
@@ -233,3 +233,27 @@
 (define (nth n lst)
   (car ((repeated cdr n) lst)))
 (#%provide accumulate enumerate-tree accumulate-n fold-left fold-right enumerate-interval flatmap filter unique-pairs sum-list nth)
+
+;; 2.2.4
+(define (make-vect x y)
+  (cons x y))
+(define (xcor-vect v)
+  (car v))
+(define (ycor-vect v)
+  (cdr v))
+
+(define (vector-component-op op)
+  (lambda (v1 v2) 
+    (make-vect 
+      (op (xcor-vect v1) (xcor-vect v2)) 
+      (op (ycor-vect v1) (ycor-vect v2)))))
+
+(define add-vect (vector-component-op +))
+(define sub-vect (vector-component-op -))
+
+(define (scale-vect s v)
+  (make-vect 
+    (* s (xcor-vect v))
+    (* s (ycor-vect v))))
+
+(#%provide make-vect xcor-vect ycor-vect add-vect sub-vect scale-vect)
