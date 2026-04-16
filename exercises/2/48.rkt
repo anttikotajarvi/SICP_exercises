@@ -11,7 +11,7 @@
 ; Use your vector representation from Exercise 2.46 to define a
 ;  representation for segments with a constructor 'make-segment'
 ;  and selectors 'start-segment' and 'end-segment'.
-; ______________________________________________________________
+; ______________________________ ________________________________
 #lang sicp
 (define (make-segment v1 v2) (cons v1 v2))
 (define (start-segment s) (car s))
