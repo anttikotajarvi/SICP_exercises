@@ -12,6 +12,6 @@
 (car ''abracadabra)
 ; This should be the same as
 (car (quote (quote abracadabra)))
-; Which is the same as
+; which is the same as
 (car (list 'quote (list 'quote 'abracadabra)))
-; Which makes sense. 
+; which makes sense. 
