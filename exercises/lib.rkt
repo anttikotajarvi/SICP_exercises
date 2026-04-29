@@ -329,7 +329,7 @@
 (define (exponent s) (caddr s))
 (#%provide make-expt expt? base exponent)
 
-;; 2.3.3. Sets
+;; 2.3.3 Sets
 (define (element-of-set? x set)
   (cond [(null? set) false]
         [(equal? x (car set)) true]
@@ -346,3 +346,48 @@
         [(cons (car set1) (intersection-set (cdr set1) set2))]
         [else (intersection-set (cdr set1) set2)]))
 (#%provide element-of-set? adjoin-set intersection-set)
+
+(define (entry tree) (car tree))
+(define (left-branch tree) (cadr tree))
+(define (right-branch tree) (caddr tree))
+(define (make-tree entry left right)
+  (list entry left right))
+
+
+(define (print-tree tree)
+  (define (empty-tree? tree)
+    (null? tree))
+
+  (define (print-node tree prefix connector)
+    (if (empty-tree? tree)
+        'done
+        (begin
+          (display prefix)
+          (display connector)
+          (display (entry tree))
+          (newline)
+
+          (let ((left (left-branch tree))
+                (right (right-branch tree))
+                (child-prefix
+                 (string-append prefix
+                                (cond [(string=? connector "") ""]
+                                      [(string=? connector "|-- ") "|   "]
+                                      [else "    "]))))
+
+            (cond [(and (empty-tree? left)
+                        (empty-tree? right))
+                   'done]
+
+                  [(empty-tree? left)
+                   (print-node right child-prefix "`-- ")]
+
+                  [(empty-tree? right)
+                   (print-node left child-prefix "`-- ")]
+
+                  [else
+                   (print-node right child-prefix "|-- ")
+                   (print-node left child-prefix "`-- ")])))))
+
+  (print-node tree "" ""))
+(#%provide entry left-branch right-branch make-tree print-tree)

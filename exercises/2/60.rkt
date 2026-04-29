@@ -15,3 +15,23 @@
 ;  in preference to the non duplicate one?
 ; ______________________________________________________________
 #lang sicp
+
+(define (element-of-set? x set)
+  (cond [(null? set) false]
+        [(equal? (car set) x) true]
+        [else (element-of-set? x (cdr set))]))
+
+(define (adjoin-set x set) (cons x set))
+
+(define (union-set set1 set2) (append set1 set2))
+
+;; Same as the previous implementation
+(define (intersection-set set1 set2)
+  (cond [(or (null? set1) (null? set2)) '()]
+        [(element-of-set? (car set1) set2)]
+        [(cons (car set1) (intersection-set (cdr set1) set2))]
+        [else (intersection-set (cdr set1) set2)]))
+
+;; This representation might be useful for short-lived sets 
+;;  where we mostly build sets with adjoin-set or union-set, 
+;;  and do not care about accumulating some duplicates.
