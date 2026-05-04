@@ -44,7 +44,7 @@
                               (right-branch tree)
                               result-list)))))
   (copy-to-list tree '()))
-
+;
 ; a. Do the two procedures produce the same result for every 
 ;    tree? If not, how do the results differ? What lists do the 
 ;    two procedures produce for the trees in Figure 2.16?
@@ -148,7 +148,7 @@
 ; The following procedure 'list->tree' converts an ordered list
 ;  to a balanced binary tree.
 ; The helper procedure 'partial-tree' takes as arguents an 
-;  integer n and a list and list of at least n elements and 
+;  integer n and a list of at least n elements and 
 ;  constructs a balanced tree containing the first n elements of
 ;  the of the list.  The result returned by 'partial-tree' is a 
 ;  pair (formed with cons) whose 'car' is the constructed tree
@@ -160,25 +160,25 @@
 (define (partial-tree elts n)
   (if (= n 0)
       (cons '() elts)
-      (let* ((left-size (quotient (- n 1) 2))
+      (let* ([left-size (quotient (- n 1) 2)]
 
-             (left-result (partial-tree elts left-size))
-             (left-tree (car left-result))
-             (non-left-elts (cdr left-result))
+             [left-result (partial-tree elts left-size)]
+             [left-tree (car left-result)]
+             [non-left-elts (cdr left-result)]
 
-             (right-size (- n (+ left-size 1)))
-             (this-entry (car non-left-elts))
+             [right-size (- n (+ left-size 1))]
+             [this-entry (car non-left-elts)]
 
-             (right-result
-              (partial-tree (cdr non-left-elts) right-size))
-             (right-tree (car right-result))
-             (remaining-elts (cdr right-result)))
+             [right-result
+              (partial-tree (cdr non-left-elts) right-size)]
+             [right-tree (car right-result)]
+             [remaining-elts (cdr right-result)])
 
         (cons (make-tree this-entry
                          left-tree
                          right-tree)
               remaining-elts))))
-;            
+;           
 ; a. Write a short paragraph explaining as clearly as you can
 ;    how 'partial-tree' works.  Draw the tree produced by
 ;    (list->tree (list 1 3 5 7 9 11))
@@ -190,12 +190,25 @@
 ; 1      9
 ;  \    / \ 
 ;   3  7   11
+;; " middle element of list becomes the entry
+;;   elements before it become the left tree
+;;   elements after it become the right tree "
+
+;; The smart part about this is how it finds left middle and 
+;;  and right list without indexing, by calculating:
+;;    left-size = (n - 1) / 2
+;, Then recursively passes all the elements along with that size
+;;  to its own procedure, using the remaining elemnts for 'entry'
+;;  and right list (car of remaining is entry and cdr is right list).
 
 ; ______________________________________________________________
 ; b. What is the order of growth in the number of steps required
 ;    by 'list->tree' to convert a list of n elements?
 ; ______________________________________________________________
 
+;; Since there is no indexing or appending, or any other looping
+;;  through the list, and make-tree is called once per each list
+;;  element, the order of growth is 'n'. Very good.
 
 ; ______________________________________________________________
 ; Exercise 2.65:
