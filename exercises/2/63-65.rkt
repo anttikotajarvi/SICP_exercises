@@ -143,6 +143,7 @@
 ;;
 ;; So tree->list-2 grows more slowly.
 
+(define tree->list tree->list-2) 
 ; ______________________________________________________________
 ; Exercise 2.64:
 ; The following procedure 'list->tree' converts an ordered list
@@ -216,3 +217,62 @@
 ;  implementations of 'union-set' and 'intersection-set' for 
 ;  sets implemented as (balanced) binary trees.
 ; ______________________________________________________________
+
+;; Even without the book guiding us towards the easy approach
+;;  in the previous exercises, it is obvious that doing these
+;;  operations on binary trees would be very difficult and 
+;;  the best approach is to use the O(n) 'tree->list' and
+;;  'list->tree' procedures. 
+
+;; Starting with union-set, which we already implemented as
+;;  a O(n) procedure in 2.62:
+(define (union-set set1 set2)
+  (cond [(null? set1) set2]
+        [(null? set2) set1]
+        [else
+         (let ([x1 (car set1)]
+               [x2 (car set2)])
+           (cond [(= x1 x2)
+                  (cons x1
+                        (union-set (cdr set1)
+                                   (cdr set2)))]
+                 [(< x1 x2)
+                  (cons x1
+                        (union-set (cdr set1)
+                                   set2))]
+                 [else
+                  (cons x2
+                        (union-set set1
+                                   (cdr set2)))]))]))
+;; For 'intersection-set' implementation we are just going
+;;  to use the book example from earlier this chapter.
+;; (Which is also O(n).)
+(define (intersection-list set1 set2)
+  (if (or (null? set1) (null? set2))
+      '()
+      (let ([x1 (car set1)]
+            [x2 (car set2)])
+        (cond [(= x1 x2)
+               (cons x1
+                     (intersection-list (cdr set1)
+                                        (cdr set2)))]
+              [(< x1 x2)
+               (intersection-list (cdr set1)
+                                  set2)]
+              [else
+               (intersection-list set1
+                                  (cdr set2))]))))
+
+;; These can just be plugged into the following procedures
+(define (union-set-tree tree1 tree2)
+  (list->tree (union-set (tree->list tree1)
+                         (tree->list tree2))))
+
+(define (intersection-list-tree tree1 tree2)
+  (list->tree 
+    (intersection-list (tree->list tree1)
+                       (tree->list tree2))))
+
+;; Each step is O(n) and the steps are performed sequentially
+;;  in linear order so the steps add to:
+;; O(n) + O(n) + O(n) = O(n)

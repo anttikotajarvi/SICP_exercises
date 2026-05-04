@@ -3,7 +3,7 @@
 ; Section: Symbolic Data
 ; Subsection: Example: Representing Sets
 ; Exercise 2.62:
-; Give an th(n) implementation of 'union-set' for sets 
+; Give an O(n) implementation of 'union-set' for sets 
 ;  represented as ordered lists.
 ; ______________________________________________________________
 #lang sicp
