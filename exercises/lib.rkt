@@ -435,16 +435,25 @@
   (cond [(null? set) (list x)]
         [(< (weight x) (weight (car set))) (cons x set)]
         [else (cons (car set)
-                    (adjoin-set x (cdr set)))]))
+                    (adjoin-leaf-set x (cdr set)))]))
 
 (define (make-leaf-set pairs)
   (if (null? pairs)
       '()
       (let ([pair (car pairs)])
-        (adjoin-set (make-leaf (car pair)  ; symbol
-                               (cadr pair) ; frequency
-                    (make-leaf-set (cdr pairs)))))))
-                    
+        (adjoin-leaf-set (make-leaf (car pair)   ; symbol
+                                    (cadr pair)) ; frequency
+                          (make-leaf-set (cdr pairs))))))
+
+
+(define A->C-sample-tree
+  (make-code-tree (make-leaf 'A 4)
+                  (make-code-tree
+                    (make-leaf 'B 2)
+                    (make-code-tree
+                      (make-leaf 'D 1)
+                      (make-leaf 'C 1)))))
+
 (#%provide make-leaf leaf? symbol-leaf weight-leaf symbols 
           weight make-code-tree decode choose-branch
-          adjoin-leaf-set make-leaf-set)
+          adjoin-leaf-set make-leaf-set A->C-sample-tree)
