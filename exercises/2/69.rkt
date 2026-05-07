@@ -8,8 +8,8 @@
 ;  one pair) and generates a Huffman encoding tree according to
 ;  the Huffman algorithm.
 #lang sicp
-;(define (generate-huffman-tree pairs)
-;  (successive-merge (make-leaf-set pairs)))
+(define (generate-huffman-tree pairs)
+  (successive-merge (make-leaf-set pairs)))
 ; 'make-leaf-set' is the procedure given above that transforms
 ;  the list of pairs into an ordered set of leaves.
 ; 'successive-merge' is the procedure you must write, using
@@ -24,22 +24,23 @@
 ; ______________________________________________________________
 (#%require "../lib.rkt")
 (define pairs (list '(A 8) '(B 3) '(C 1) '(D 1) '(E 1) '(F 1) '(G 1) '(H 1)))
-(define leaf-set (make-leaf-set pairs))
 
-(define (merge-pairs pairs)
-  (list (accumulate
-          (lambda (a b)
-            (cons (symbol-leaf a) b))
-          '()
-          pairs)
-        (accumulate
-          (lambda (a b) (+ (weight-leaf a) b))
-          0
-          pairs
-          )))
+(define (successive-merge branches)
+  (if (null? (cdr branches))
+      (car branches) ; !!
+      (let* ([s1 (car branches)]
+             [s2 (cadr branches)]
+             [rest (cddr branches)]
+             [new (make-code-tree s1 s2)])
+        (successive-merge (adjoin-leaf-set new rest)))))
+
+(define tree (generate-huffman-tree pairs))
+(define msg '(B A D C A B))
+(define encoded (encode msg tree))
+(define decoded (decode encoded tree))
+
 (inspect pairs)
-(inspect leaf-set)
-(inspect (merge-pairs leaf-set))
-(define (successive-merge pairs)
-  (define (rec a w)
-    ))
+(inspect tree)
+(inspect msg)
+(inspect encoded)
+(inspect decoded)

@@ -390,7 +390,29 @@
                    (print-node left child-prefix "`-- ")])))))
 
   (print-node tree "" ""))
-(#%provide entry left-branch right-branch make-tree print-tree)
+
+  (define (partial-tree elts n)
+  (if (= n 0)
+      (cons '() elts)
+      (let* ([left-size (quotient (- n 1) 2)]
+
+             [left-result (partial-tree elts left-size)]
+             [left-tree (car left-result)]
+             [non-left-elts (cdr left-result)]
+
+             [right-size (- n (+ left-size 1))]
+             [this-entry (car non-left-elts)]
+
+             [right-result
+              (partial-tree (cdr non-left-elts) right-size)]
+             [right-tree (car right-result)]
+             [remaining-elts (cdr right-result)])
+
+        (cons (make-tree this-entry
+                         left-tree
+                         right-tree)
+              remaining-elts))))
+(#%provide entry left-branch right-branch make-tree print-tree partial-tree)
 
 ; 2.3.4 Huffman Trees
 (define (make-leaf symbol weight) (list 'leaf symbol weight))
@@ -453,7 +475,23 @@
                     (make-code-tree
                       (make-leaf 'D 1)
                       (make-leaf 'C 1)))))
+(define (encode-symbol symbol tree)
+  (cond [(not (element-of-set? symbol (symbols tree)))
+         (error "Symbol not in tree: " symbol)]
+        [(leaf? tree)
+         '()]
+        [(element-of-set? symbol (symbols (left-branch tree)))
+         (cons 0
+               (encode-symbol symbol (left-branch tree)))]
+        [else
+         (cons 1
+               (encode-symbol symbol (right-branch tree)))]))
 
+(define (encode message tree)
+  (if (null? message)
+      '()
+      (append (encode-symbol (car message) tree)
+              (encode (cdr message) tree))))
 (#%provide make-leaf leaf? symbol-leaf weight-leaf symbols 
           weight make-code-tree decode choose-branch
-          adjoin-leaf-set make-leaf-set A->C-sample-tree)
+          adjoin-leaf-set make-leaf-set A->C-sample-tree encode)
