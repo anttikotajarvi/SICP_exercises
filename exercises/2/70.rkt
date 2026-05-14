@@ -1,0 +1,59 @@
+; SICP 2.3.4
+; Chapter: Building Abstractions with Data
+; Section: Symbolic Data
+; Subsection: Example: Huffman Encoding Trees
+; Exercise 2.70:
+; The following eight-symbol alphabet with associated relative
+;  frequencies was designed to efficiently encode the lyrics of
+;  1950s rock songs.  (Note that the "symbols" of an "alphabet" 
+;  need not be individual letters.)
+; A    2    GET 2    SHA  3    WAH 1
+; BOOM 1    JOB 2    NA  16    YIP 9
+; Use 'generate-huffman-tree' (Exercise 2.69) to generate a 
+;  corresponding Huffman tree, and use 'encode' (Exercise 2.68)
+;  to encode the following message:
+;
+; Get a job
+; Sha na na na na na na na na
+; Get a job
+; Sha na na na na na na na na
+; Wah yip yip yip yip yip yip yip yip yip
+; Sha boom
+;
+; How many bits are required for the encoding?
+; What is the smallest number of bits that would be needed to
+;  encode this song if we used a fixed-length code for the 
+;  eight-symbol alphabet?
+; ______________________________________________________________
+#lang sicp
+(#%require "../lib.rkt")
+
+(define pairs '( (NA 16) (YIP 9) (SHA 3) (A 2) 
+                 (GET 2) (JOB 2) (WAH 1) (BOOM 1)))
+
+(define song
+  '(GET A JOB
+    SHA NA NA NA NA NA NA NA NA
+    GET A JOB
+    SHA NA NA NA NA NA NA NA NA
+    WAH YIP YIP YIP YIP YIP YIP YIP YIP YIP
+    SHA BOOM))
+
+(#%require "69.rkt")
+(define tree (generate-huffman-tree pairs))
+
+
+(define encoded (encode song tree))
+
+(inspect (length encoded)) ; 84
+(inspect (decode encoded tree))
+
+;; With fixed-length code, we can represent the 8 symbols 
+;;  with 3 bits (000 - 111)
+;; And with this many symbols
+(inspect (length song)); 36
+;; 36 symbols × 3 bits = 108 bits
+
+;; Encoding with a Huffman tree :     84bits
+;; Encoding with a fixed-length code: 108bits
+

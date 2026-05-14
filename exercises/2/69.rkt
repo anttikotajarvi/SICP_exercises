@@ -2,7 +2,7 @@
 ; Chapter: Building Abstractions with Data
 ; Section: Symbolic Data
 ; Subsection: Example: Huffman Encoding Trees
-; Exercise 2.68:
+; Exercise 2.69:
 ; The following procedure takes as its argument a list of
 ;  symbol-frequency pairs (where no symbol appears in more than
 ;  one pair) and generates a Huffman encoding tree according to
@@ -34,13 +34,15 @@
              [new (make-code-tree s1 s2)])
         (successive-merge (adjoin-leaf-set new rest)))))
 
-(define tree (generate-huffman-tree pairs))
-(define msg '(B A D C A B))
-(define encoded (encode msg tree))
-(define decoded (decode encoded tree))
+  (#%provide generate-huffman-tree)
 
-(inspect pairs)
-(inspect tree)
-(inspect msg)
-(inspect encoded)
-(inspect decoded)
+;(define tree (generate-huffman-tree pairs))
+;(define msg '(B A D C A B))
+;(define encoded (encode msg tree))
+;(define decoded (decode encoded tree))
+;
+;(inspect pairs)
+;(inspect tree)
+;(inspect msg)
+;(inspect encoded)
+;(inspect decoded)
