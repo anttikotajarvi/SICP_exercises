@@ -495,3 +495,8 @@
 (#%provide make-leaf leaf? symbol-leaf weight-leaf symbols 
           weight make-code-tree decode choose-branch
           adjoin-leaf-set make-leaf-set A->C-sample-tree encode)
+
+;; 2.4.3
+(define (get . x) (error "undefined"))
+(define (put . x) (error "undefined"))
+(#%provide get put)
