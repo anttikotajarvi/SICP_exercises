@@ -497,6 +497,16 @@
           adjoin-leaf-set make-leaf-set A->C-sample-tree encode)
 
 ;; 2.4.3
+(define (attach-tag type contents)
+  (cons type contents))
+
+(define (type-tag datum)
+  (car datum))
+
+(define (contents datum)
+  (cdr datum))
+
+
 (define (get . x) (error "undefined"))
 (define (put . x) (error "undefined"))
-(#%provide get put)
+(#%provide attach-tag type-tag contents get put)
