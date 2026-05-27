@@ -160,4 +160,11 @@
 ; You will have to define operations such as 'sine' and 'cosine' 
 ;  that are generic over ordinary numbers and rational numbers.
 ; ______________________________________________________________
-;; Implemented in systems/generic-arithmetic/
+;; Implemented in systems/generic-arithmetic/ which is a 
+;;  slightly different system than this hierarchic one.
+
+;; Implementation is pretty simple and consists of adding:
+(define (cosine x) (apply-generic 'cosine x))
+(define (sine x) (apply-generic 'sine x))
+(define (arctangent x) (apply-generic 'arctanget x))
+(define (square-root x) (apply-generic 'square-root x))

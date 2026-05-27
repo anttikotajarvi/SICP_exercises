@@ -12,13 +12,13 @@
     (cons r a))
 
   (define (real-part z)
-    (mult (magnitude z) (cos (angle z))))
+    (mult (magnitude z) (cosine (angle z))))
 
   (define (imag-part z)
-    (* (magnitude z) (sin (angle z))))
+    (mult (magnitude z) (sine (angle z))))
 
   (define (make-from-real-imag x y)
-    (cons (sqrt (+ (square x) (square y)))
+    (cons (square-root (add (mul x x) (mul y y)))
           (atan y x)))
 
   ;; interface

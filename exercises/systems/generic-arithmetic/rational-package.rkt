@@ -1,6 +1,6 @@
 #lang sicp
 (#%require "./exercises/lib.rkt")
-
+(#%require "scheme-number-package.rkt")
 (define (make-rational n d)
   ((get 'make 'rational) n d))
 
@@ -33,6 +33,7 @@
     (make-rat (* (numer x) (denom y))
               (* (denom x) (numer y))))
 
+
 	;; predicates
   (define (equ?-rat x y)
     (and (= (numer x) (numer y))
@@ -56,6 +57,27 @@
   (put 'make 'rational
        (lambda (n d) (attach-tag tag (make-rat n d))))
 
+  ;; Lazy algebra implementation
+  (put 'sine '(rational)
+      (lambda (x)
+        (make-real
+          (sin (/ (numer x) (denom x))))))
+
+  (put 'cosine '(rational)
+      (lambda (x)
+        (make-scheme-number
+          (cos (/ (numer x) (denom x))))))
+
+  (put 'square-root '(rational)
+      (lambda (x)
+        (make-scheme-number
+          (sqrt (/ (numer x) (denom x))))))
+
+  (put 'arctangent '(rational rational)
+      (lambda (y x)
+        (make-scheme-number
+          (atan (/ (numer y) (denom y))
+                (/ (numer x) (denom x))))))
   'done)
 
 
