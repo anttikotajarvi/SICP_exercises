@@ -1,5 +1,8 @@
 #lang sicp
-(#%require "../lib.rkt")
+(#%require "./exercises/lib.rkt")
+(#%require "../helpers.rkt")
+(#%require "../generic-arithmetic.rkt")
+
 (define (install-rectangular-package)
   ;; internal procedures
   (define (real-part z) (car z))

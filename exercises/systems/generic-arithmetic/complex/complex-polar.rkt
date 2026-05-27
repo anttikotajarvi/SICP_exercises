@@ -1,5 +1,7 @@
 #lang sicp
-(#%require "../lib.rkt")
+(#%require "./exercises/lib.rkt")
+(#%require "../helpers.rkt")
+(#%require "../generic-arithmetic.rkt")
 
 (define (install-polar-package)
   ;; internal procedures
@@ -10,7 +12,7 @@
     (cons r a))
 
   (define (real-part z)
-    (* (magnitude z) (cos (angle z))))
+    (mult (magnitude z) (cos (angle z))))
 
   (define (imag-part z)
     (* (magnitude z) (sin (angle z))))
