@@ -50,8 +50,8 @@
   (put 'mul '(rational rational) (wrap tag mul-rat))
   (put 'div '(rational rational) (wrap tag div-rat))
 
-  (put 'equ?-rat '(rational rational) equ?-rat)
-  (put ''=zero?-rat '(rational rational) '=zero?-rat)
+  (put 'equ? '(rational rational) equ?-rat)
+  (put '=zero? '(rational rational) '=zero?-rat)
 
 
   (put 'make 'rational

@@ -12,14 +12,14 @@
     (cons r a))
 
   (define (real-part z)
-    (mult (magnitude z) (cosine (angle z))))
+    (mul (magnitude z) (cosine (angle z))))
 
   (define (imag-part z)
-    (mult (magnitude z) (sine (angle z))))
+    (mul (magnitude z) (sine (angle z))))
 
   (define (make-from-real-imag x y)
     (cons (square-root (add (mul x x) (mul y y)))
-          (atan y x)))
+          (arctangent y x)))
 
   ;; interface
   (define (tag x) (attach-tag 'polar x))

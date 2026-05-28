@@ -12,15 +12,15 @@
     (cons x y))
 
   (define (magnitude z)
-    (sqrt (add (square (real-part z))
-               (square (imag-part z)))))
+    (square-root (add (square-g (real-part z))
+               (square-g (imag-part z)))))
 
   (define (angle z)
     (atan (imag-part z) (real-part z)))
 
   (define (make-from-mag-ang r a)
-    (cons (mult r (cosine a))
-          (mult r (sine a))))
+    (cons (mul r (cosine a))
+          (mul r (sine a))))
 
   ;; interface
   (define (tag x) (attach-tag 'rectangular x))

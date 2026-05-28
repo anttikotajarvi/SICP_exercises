@@ -4,6 +4,7 @@
 (define (sub x y) (apply-generic 'sub x y))
 (define (mul x y) (apply-generic 'mul x y))
 (define (div x y) (apply-generic 'div x y))
+(define (square-g x) (mul x x))
 
 (define (equ? x y) (apply-generic 'equ? x y))
 
@@ -14,4 +15,4 @@
 (define (square-root x) (apply-generic 'square-root x))
 
 (#%provide add sub mul div equ?
-  cosine sine square)
+  cosine sine square-g)

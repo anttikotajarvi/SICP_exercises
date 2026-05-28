@@ -35,7 +35,7 @@
                          (sub (imag-part z1) (imag-part z2))))
 
   (define (mul-complex z1 z2)
-    (make-from-mag-ang (mult (magnitude z1) (magnitude z2))
+    (make-from-mag-ang (mul (magnitude z1) (magnitude z2))
                        (add (angle z1) (angle z2))))
 
   (define (div-complex z1 z2)
@@ -48,8 +48,8 @@
          (equ? (imag-part z1) (imag-part z2))))
 
 	(define (=zero?-complex z)
-		(and (equ? (real-part z) 0)
-				(equ? (imag-part z) 0)))
+		(and (=zero? (real-part z))
+				 (=zero? (imag-part z) 0)))
 
   ;; interface
   (define tag 'complex)
