@@ -11,7 +11,6 @@
 (define (sine x) (apply-generic 'sine x))
 (define (arctangent-g x) (apply-generic 'arctanget x))
 
-(define (^2 x) (mul x x))
 (define (square-root x) (apply-generic 'square-root x))
 
 (#%provide add sub mul div equ?
