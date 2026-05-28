@@ -60,7 +60,7 @@
   ;; Lazy algebra implementation
   (put 'sine '(rational)
       (lambda (x)
-        (make-real
+        (make-scheme-number
           (sin (/ (numer x) (denom x))))))
 
   (put 'cosine '(rational)

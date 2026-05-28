@@ -16,7 +16,7 @@
                (square-g (imag-part z)))))
 
   (define (angle z)
-    (atan (imag-part z) (real-part z)))
+    (arctangent (imag-part z) (real-part z)))
 
   (define (make-from-mag-ang r a)
     (cons (mul r (cosine a))

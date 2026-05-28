@@ -10,11 +10,19 @@
   (put 'mul '(scheme-number scheme-number) (wrap tag *))
   (put 'div '(scheme-number scheme-number) (wrap tag /))
 
-  (put 'square-root '(scheme-number) (wrap tag sqrt))
+  (put 'sine '(scheme-number)
+      (lambda (x)
+        (make-scheme-number (sin x))))
 
-  (put 'sine '(scheme-number) (wrap tag sin))
-  (put 'cosine '(scheme-number) (wrap tag cos))
-  (put 'arctangent '(scheme-number) (wrap tag atan))
+  (put 'cosine '(scheme-number)
+      (lambda (x)
+        (make-scheme-number (cos x))))
+
+  (put 'square-root '(scheme-number)
+      (lambda (x)
+        (make-scheme-number (sqrt x))))
+
+  (put 'arctangent '(scheme-number scheme-number) (wrap tag atan))
 
   (put 'equ? '(scheme-number scheme-number) =)
   (put '=zero? '(scheme-number) (lambda (x) (= x 0)))

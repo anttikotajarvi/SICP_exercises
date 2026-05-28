@@ -162,9 +162,16 @@
 ; ______________________________________________________________
 ;; Implemented in systems/generic-arithmetic/ which is a 
 ;;  slightly different system than this hierarchic one.
+;; It is very weird that the previous arithmetic system
+;;  that we were asked to define and add methods to
+;;  used the type scheme-number, rational and polar when these
+;;  last few exercises gave a new setup with integer, rational,
+;;  real and complex.  This seems like an oversight left over
+;;  from the fisrt version of this book or something.
 
 ;; Implementation is pretty simple and consists of adding:
 (define (cosine x) (apply-generic 'cosine x))
 (define (sine x) (apply-generic 'sine x))
 (define (arctangent x) (apply-generic 'arctanget x))
 (define (square-root x) (apply-generic 'square-root x))
+
