@@ -1,7 +1,7 @@
 #lang sicp
 (#%require "./exercises/lib.rkt")
-(#%require "../helpers.rkt")
-(#%require "../generic-arithmetic.rkt")
+(#%require sicp-lib/arithmetic sicp-lib/arithmetic/internal)
+
 
 (define (install-rectangular-package)
   ;; internal procedures

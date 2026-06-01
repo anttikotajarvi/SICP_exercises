@@ -1,6 +1,6 @@
 #lang sicp
 (#%require "./exercises/lib.rkt")
-(#%require "scheme-number-package.rkt")
+(#%require sicp-lib/arithmetic/scheme-number)
 (define (make-rational n d)
   ((get 'make 'rational) n d))
 

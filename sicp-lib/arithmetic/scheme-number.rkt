@@ -1,6 +1,6 @@
 #lang sicp
 (#%require "./exercises/lib.rkt")
-(#%require "helpers.rkt")
+(#%require sicp-lib/arithmetic/internal)
 
 (define (install-scheme-number-package)
   (define tag 'scheme-number)
