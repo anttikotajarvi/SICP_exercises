@@ -10,7 +10,7 @@
 ;  a tree (as in Figure 2.6).
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (display (list 1 (list 2 (list 3 4))))
 ; (1 (2 (3 4)))
 

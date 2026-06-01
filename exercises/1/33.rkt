@@ -19,7 +19,7 @@
 ; ______________________________________________________________
 
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (filtered-accumulate filter combiner null-value term a next b)
   (define (iter a result)

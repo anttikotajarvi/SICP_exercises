@@ -12,5 +12,5 @@
 (define (compose f g)
   (lambda (x) (f (g x))))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect ((compose square inc) 6)); 49

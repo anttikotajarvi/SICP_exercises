@@ -42,5 +42,5 @@
 
 ; Test
 (define three ((addition one) two))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect ((three inc) 0))

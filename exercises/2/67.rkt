@@ -5,7 +5,8 @@
 ; Exercise 2.67:
 ; Define an encoding tree and a sample message:
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/huffman)
 (define sample-tree
   (make-code-tree (make-leaf 'A 4)
                   (make-code-tree

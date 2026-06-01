@@ -18,7 +18,7 @@
 ;  'iterative-improve'.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (iterative-improve good-enough? improve)
   (lambda (guess)
     (define (iter guess)

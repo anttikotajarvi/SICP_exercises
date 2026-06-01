@@ -50,6 +50,6 @@
               result))))
   (iter l (list first)))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (same-parity 1 2 3 4 5 6 7))
 (inspect (same-parity 2 3 4 5 6 7))

@@ -9,8 +9,8 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../lib.rkt")
-(#%require "../paint-util.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/pict/paint-util)
 
 (define (up-split painter n)
   (if (= n 0)

@@ -1,5 +1,6 @@
 #lang sicp
-(#%require "./exercises/lib.rkt")
+;; SICP 2.4.3: Data-Directed Programming and Additivity.
+(#%require sicp-lib/generic)
 (#%require sicp-lib/arithmetic sicp-lib/arithmetic/internal)
 
 

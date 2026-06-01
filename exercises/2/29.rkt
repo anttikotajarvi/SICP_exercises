@@ -47,7 +47,7 @@
       (total-weight s)))
 
 (define m1 (make-mobile (make-branch 2 3) (make-branch 2 3)))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (total-weight m1))
 
 ; ______________________________________________________________

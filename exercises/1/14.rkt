@@ -7,7 +7,7 @@
 ;  the amount to be changed increases?
 ;____________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 ; Change counting process from 1.2.2
 (define (count-change amount)

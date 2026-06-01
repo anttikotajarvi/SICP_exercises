@@ -9,7 +9,7 @@
 ; (((double (double double)) inc) 6)
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (double f)
   (lambda (x) (f (f x))))
 

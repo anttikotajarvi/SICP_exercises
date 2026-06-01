@@ -25,7 +25,7 @@
                   (cons x2
                         (union-set set1
                                    (cdr set2)))]))]))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (union-set (list 1 2 6 8) (list 1 3 7 8)))
 
 ; Visualization for travelsa goes something like this:

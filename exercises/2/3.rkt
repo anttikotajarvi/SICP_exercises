@@ -64,7 +64,7 @@
   (+ (* 2 (width-rect rect))
      (* 2 (height-rect rect))))
                         
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (a-rect rect))
 (inspect (height-rect rect))
 (inspect (width-rect rect))

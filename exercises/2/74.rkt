@@ -41,7 +41,8 @@
 ;    In particular, what type of information must be supplied?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/generic)
 ;; Here lets assume every divisions personnel file is tagged 
 ;;  with a unique type.
 ;; Realistically the tag shouldnt just be "division-name" but 

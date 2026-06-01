@@ -209,7 +209,7 @@
 ; ______________________________________________________________
 (define A (make-interval 2 8))
 (define B (make-interval 4 10))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (percent (par1 A A)))
 (inspect (percent (par2 A A)))
 (inspect (percent (par1 A B)))

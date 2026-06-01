@@ -41,7 +41,7 @@
 
 (define v1 (make-vect 1 2))
 (define v2 (make-vect 3 4))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (add-vect v1 v2))
 (inspect (sub-vect v1 v2))
 (inspect (scale-vect 2 v1))

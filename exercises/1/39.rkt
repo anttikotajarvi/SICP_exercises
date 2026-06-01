@@ -16,7 +16,7 @@
 ;  compute, as in [Exercise 1.37].
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (tan-cf x k)
   (define x^2 (square x))

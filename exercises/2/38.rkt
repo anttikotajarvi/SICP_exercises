@@ -16,7 +16,7 @@
   (iter initial sequence))
 ; What are the values of:
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define fold-right accumulate)
 (fold-right / 1 (list 1 2 3))     ; 3/2
 (fold-left / 1 (list 1 2 3))      ; 1/6

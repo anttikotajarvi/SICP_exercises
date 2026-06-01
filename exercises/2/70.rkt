@@ -26,7 +26,8 @@
 ;  eight-symbol alphabet?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/huffman)
 
 (define pairs '( (NA 16) (YIP 9) (SHA 3) (A 2) 
                  (GET 2) (JOB 2) (WAH 1) (BOOM 1)))

@@ -11,7 +11,8 @@
 ;  encode the most frequent symbol?  The least frequent symbol?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/huffman)
 (#%require "69.rkt")
 
 

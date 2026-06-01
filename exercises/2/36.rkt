@@ -17,7 +17,7 @@
 ;  of 'accumulate-n':
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (accumulate-n op init seqs)
   (if (null? (car seqs))

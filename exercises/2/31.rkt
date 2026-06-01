@@ -9,7 +9,7 @@
 ;   (define (square-tree tree) (tree-map square tree))
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (tree-map f t)
   (define (f-mod t)
     (cond

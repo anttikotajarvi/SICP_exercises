@@ -14,8 +14,9 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../paint-util.rkt")
-(#%require "../lib.rkt")
+(#%require sicp-lib/pict/paint-util)
+(#%require sicp-lib)
+(#%require (only-in sicp-lib/pict up-split right-split))
 (define (corner-split painter n)
   (if (= n 0)
       painter

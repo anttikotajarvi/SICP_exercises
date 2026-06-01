@@ -9,7 +9,7 @@
 (define y (list 4 5 6))
 ; What result is printed by the interpreter in response to 
 ;  evaluating each of the following expressions:
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (append x y))
 (inspect (cons x y))
 (inspect (list x y))

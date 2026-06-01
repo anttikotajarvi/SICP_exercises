@@ -18,7 +18,7 @@
 ;  a sequence, from a_0 through a_n.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (horner-eval x coefficient-sequence)
   (define (f this-coeff higher-terms)
     (+ this-coeff (* x higher-terms)))

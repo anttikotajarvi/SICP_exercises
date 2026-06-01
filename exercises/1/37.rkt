@@ -74,7 +74,7 @@
                   (lambda (i) 1.0)
                   k))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (display "Recursive test: \n")
 (inspect (test-rec 1))
 (inspect (test-rec 2))

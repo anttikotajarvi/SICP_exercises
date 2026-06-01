@@ -31,7 +31,7 @@
 ;  the sequence of all ways to place queens in the first k
 ;  columns of the board.
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (queens board-size)
   (define (queen-cols k)
     (if (= k 0)

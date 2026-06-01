@@ -39,6 +39,6 @@
 (define (cdr z)
   (count-factors z 3))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (car (cons 3 4)))
 (inspect (cdr (cons 3 4)))

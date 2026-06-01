@@ -27,6 +27,6 @@
           (equal? (cdr a) (cdr b)))]
     [else false]))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (equal? '(a (b (c))) '(a (b (c)))))
 (inspect (equal? '(a (b (c))) '(a (b (b)))))

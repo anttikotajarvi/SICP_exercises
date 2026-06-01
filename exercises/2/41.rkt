@@ -8,7 +8,7 @@
 ;  integer n that sum to a given integer s.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (unique-triples n)
     (flatmap (lambda (i)
             (map (lambda (jk) (cons i jk))

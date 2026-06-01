@@ -27,7 +27,8 @@
 ; What procedure is dispatched to each case?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/generic)
 (#%require "../systems/generic-arithmetic.rkt")
 
 ; Figure 2.24:

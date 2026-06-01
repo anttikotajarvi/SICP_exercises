@@ -23,7 +23,8 @@
 ;    notation such that our derivative program still works?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/symbolic)
 
 ; Not too happy with this solution, couldn't come up with any 
 ;  nice simplification methods to jam into the the selectors.

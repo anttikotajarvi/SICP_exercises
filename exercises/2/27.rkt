@@ -22,7 +22,7 @@
                       rl)))))
   (iter l (list)))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define x   (list (list (list 1 2)  
               (list 3 4))
         (list (list 5 6)

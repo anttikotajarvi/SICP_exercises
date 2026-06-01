@@ -12,7 +12,7 @@
 ; For Each constructor supply the appropriate selectors to
 ;  produce an implementation for frames.
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 ;; First implementation
 (define (origin-frame1 f) (car f))

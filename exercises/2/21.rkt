@@ -20,6 +20,6 @@
 (define (square-list-2 items)
   (map square items))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (square-list-1 (list 1 2 3 4 5 6)))
 (inspect (square-list-2 (list 1 2 3 4 5 6)))

@@ -1,4 +1,6 @@
 #lang sicp
+;; SICP 2.5: Systems with Generic Operations.
+(#%require sicp-lib/generic)
 
 ;; Note that this implementation isn't finished
 ;;  and some stuff is broken, but since we haven't been
@@ -16,9 +18,10 @@
 
 (define (cosine x) (apply-generic 'cosine x))
 (define (sine x) (apply-generic 'sine x))
-(define (arctangent x) (apply-generic 'arctangent x y))
+(define (arctangent y x) (apply-generic 'arctangent y x))
 
 (define (square-root x) (apply-generic 'square-root x))
 
-(#%provide add sub mul div equ?
-  cosine sine square-g square-root)
+(#%provide add sub mul div square-g
+           equ? =zero?
+           cosine sine arctangent square-root)

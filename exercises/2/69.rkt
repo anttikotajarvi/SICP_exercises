@@ -22,7 +22,8 @@
 ;  You can take significant advantage of the fact that we are
 ;  using an ordered set representation.)
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/huffman)
 (define pairs (list '(A 8) '(B 3) '(C 1) '(D 1) '(E 1) '(F 1) '(G 1) '(H 1)))
 
 (define (successive-merge branches)

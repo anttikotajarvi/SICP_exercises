@@ -16,5 +16,5 @@
         (iter (cdr l) (cons (car l) rl))))
   (iter l (list)))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (reverse (list 1 4 9 16 25)))

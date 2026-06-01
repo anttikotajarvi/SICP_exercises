@@ -15,7 +15,7 @@
 ; (Hint: To verify that this works make use of the substitution
 ;  model of [1.1.5])
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (car (cons 1 2))
 ; (car (lambda (m) (m 1 2)))
 ; ((lambda (m) (m 1 2)) (lambda (p q) p))

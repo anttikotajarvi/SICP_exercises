@@ -30,7 +30,7 @@
 ;  return 0. 
 ; ______________________________________________________________
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 ; Alternate form of Fermat's Little Theorem
 ; "if n is prime, and n > a > 0

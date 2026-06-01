@@ -8,7 +8,7 @@
 ;  as acumulations.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (map p sequence)    
   (accumulate (lambda (x y) (cons (p x) y)) nil sequence))
 (inspect (map square (list 1 2 3 4)))

@@ -46,7 +46,7 @@
 ; Does the order of the list 'coin-values' affect the answer
 ;  produced by 'cc'? Why or why not?
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (first-denomination coin-values)
   (car (reverse coin-values)))
 

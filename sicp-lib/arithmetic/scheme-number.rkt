@@ -1,5 +1,6 @@
 #lang sicp
-(#%require "./exercises/lib.rkt")
+;; SICP 2.5.1: Generic Arithmetic Operations.
+(#%require sicp-lib/generic)
 (#%require sicp-lib/arithmetic/internal)
 
 (define (install-scheme-number-package)

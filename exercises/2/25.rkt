@@ -11,7 +11,7 @@
 ; ______________________________________________________________
 #lang sicp
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 ; List 1
 (define l1 (list 1 3 (list 5 7) 9))

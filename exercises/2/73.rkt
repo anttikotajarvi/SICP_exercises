@@ -33,7 +33,9 @@
 ;  the basic derivative procedure as
 ;
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/generic)
+(#%require (only-in sicp-lib/symbolic variable? same-variable? make-product make-expt))
    (define (deriv exp var)
      (cond [(number? exp) 0]
            [(variable? exp) (if (same-variable? exp var) 1 0)]

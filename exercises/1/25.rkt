@@ -10,7 +10,7 @@
 ; Is she correct? Would this procedure serve as well for our
 ;  prime tester? Explain.
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (fermat-test n)
   (define (try-it a)

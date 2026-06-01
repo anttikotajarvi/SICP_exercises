@@ -9,8 +9,8 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../lib.rkt")
-(#%require "../paint-util.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/pict/paint-util)
 (define (flip-horiz painter)
   (transform-painter painter 
     (make-vect 0 1)

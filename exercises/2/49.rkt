@@ -9,8 +9,8 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../paint-util.rkt")
-(#%require "../lib.rkt")
+(#%require sicp-lib/pict/paint-util)
+(#%require sicp-lib)
 
 (define outline-painter (segments->painter (list 
     (make-segment (make-vect 0 0) (make-vect 1 0))

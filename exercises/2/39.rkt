@@ -8,7 +8,7 @@
 ;  Exercise 2.38:
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (reverse sequence)
   (fold-right (lambda (x y) (append y (list x))) nil sequence))
 (inspect (reverse (list 1 2 3)))

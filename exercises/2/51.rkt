@@ -14,8 +14,8 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../paint-util.rkt")
-(#%require "../lib.rkt")
+(#%require sicp-lib/pict/paint-util)
+(#%require sicp-lib)
 (define (above1 painter1 painter2)
   (let ([split-point (make-vect 0.0 0.5)])
     (let ([paint-bottom

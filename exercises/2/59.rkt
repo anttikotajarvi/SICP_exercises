@@ -11,7 +11,8 @@
 ;  representation of sets.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/sets)
 
 (define (union-set set1 set2)
   (if (null? set1)

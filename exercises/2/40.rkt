@@ -9,7 +9,7 @@
 ;  'prime-sum-pairs' given above.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 ;; Unique pairs
 (define (unique-pairs n)
   (flatmap

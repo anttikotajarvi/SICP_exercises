@@ -1,6 +1,8 @@
 #lang sicp
-(#%require "./exercises/lib.rkt")
-(#%require sicp-lib/arithmetic/scheme-number)
+;; SICP 2.5.1: Generic Arithmetic Operations.
+(#%require sicp-lib/generic)
+(#%require sicp-lib/arithmetic/scheme-number
+           sicp-lib/arithmetic/internal)
 (define (make-rational n d)
   ((get 'make 'rational) n d))
 

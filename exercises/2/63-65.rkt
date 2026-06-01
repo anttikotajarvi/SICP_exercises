@@ -1,5 +1,6 @@
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require (only-in sicp-lib/sets entry left-branch right-branch make-tree print-tree))
 
 (define (element-of-set? x set)
   (cond [(null? set) false]

@@ -40,3 +40,4 @@
 ;; =(n^2 + n)/2
 ;; or just O(n^2)
 #lang sicp
+(#%require sicp-lib/huffman)

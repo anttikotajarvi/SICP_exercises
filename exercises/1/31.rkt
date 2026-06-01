@@ -17,7 +17,7 @@
 ;  a recursive process.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 
 (define (identity x) x)

@@ -9,7 +9,7 @@
 ; Can you explain any discrepancy you find?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 ; Fermat
 (define (expmod base exp m)

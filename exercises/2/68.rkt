@@ -20,7 +20,9 @@
 ;  Exercise 2.67 with the samplel tree and seeing whether it is
 ;  the same as the original sample message.
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require (only-in sicp-lib/huffman A->C-sample-tree decode symbols leaf? symbol-leaf))
+(#%require sicp-lib/sets)
 ;; 'symbols' returns a list of symbols for both a branch and a leaf!
 (define (encode-symbol symbol tree)
   (cond [(not (element-of-set? symbol (symbols tree)))

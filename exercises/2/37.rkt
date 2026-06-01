@@ -22,7 +22,7 @@
 ;   (transpose m)
 ; We can define the dot product as
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (dot-product v w)
   (accumulate + 0 (map * v w)))

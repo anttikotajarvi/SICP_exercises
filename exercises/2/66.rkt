@@ -8,7 +8,8 @@
 ;  numerical values of the keys.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/sets)
 (define (make-record key data) (cons key data))
 (define key car)
 (define record-data cdr)

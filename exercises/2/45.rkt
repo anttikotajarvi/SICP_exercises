@@ -12,8 +12,8 @@
 ; ______________________________________________________________
 #lang sicp
 (#%require sicp-pict)
-(#%require "../lib.rkt")
-(#%require "../paint-util.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/pict/paint-util)
 
 (define (split a b)
   (lambda (painter n)

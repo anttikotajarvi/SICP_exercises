@@ -30,5 +30,5 @@
         (f (car l))
         (for-each f (cdr l)))))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (for-each display (list 57 321 88))

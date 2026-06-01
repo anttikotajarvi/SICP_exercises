@@ -14,7 +14,7 @@
 ;   (1 2 3 4 1 2 3 4)
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (fringe t)
   (define left (car t))
   (define right (cadr t))

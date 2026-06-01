@@ -19,7 +19,7 @@
 ;  [Exercise 1.42].
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define (repeated f n)
   (define (iter result n)
     (if (<= n 1)

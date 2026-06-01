@@ -1,4 +1,8 @@
 #lang sicp
+;; SICP 2.4.3 and 2.5.1: Data-directed complex arithmetic.
+(#%require sicp-lib/generic
+           sicp-lib/arithmetic
+           sicp-lib/arithmetic/internal)
 (define (real-part z) (apply-generic 'real-part z))
 (define (imag-part z) (apply-generic 'imag-part z))
 (define (magnitude z) (apply-generic 'magnitude z))

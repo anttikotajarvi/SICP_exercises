@@ -32,7 +32,7 @@
 ; make-, x-, y-point
 ; midpoint-segment
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (define (make-point x y) (cons x y))
 (define (x-point p) (car p))

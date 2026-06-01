@@ -7,7 +7,7 @@
 ;  each of the following expressions?
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 
 (inspect (list 'a 'b 'c)) ; (a b c)
 ; This should evaluate the list of the symbols

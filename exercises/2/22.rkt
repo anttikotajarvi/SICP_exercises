@@ -30,7 +30,7 @@
        (iter items nil))
 ; This doesn't work either. Explain.
 ; ______________________________________________________________
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (inspect (square-list-1 (list 1 2 3 4 5)));  (25 16 9 4 1)
 ; This returns (25 16 9 4 1)
 ; Or (25 (16 (9 (4 1))))

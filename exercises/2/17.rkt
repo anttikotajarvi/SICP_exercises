@@ -14,5 +14,5 @@
         (car l)
         (last-pair (cdr l))))
 
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (last-pair (list 23 72 149 34))

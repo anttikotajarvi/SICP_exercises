@@ -21,7 +21,7 @@
 ;  as primitives.
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (define log2 (log-base 2))
 
 (define (damps n)

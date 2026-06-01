@@ -20,7 +20,7 @@
       (let ([rest (subsets (cdr s))]) 
            (append rest (map f rest)))))
 (define set (list 1 2 3))
-(#%require "../lib.rkt")
+(#%require sicp-lib)
 (display "Should be:      (() (3) (2) (2 3) (1) (1 3) (1 2) (1 2 3))\n")
 (inspect (subsets set))
 ; To determine the function we need need to map over 'rest'

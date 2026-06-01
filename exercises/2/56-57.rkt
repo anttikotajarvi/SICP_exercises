@@ -11,7 +11,8 @@
 ;    dx             dx
 ; ______________________________________________________________
 #lang sicp
-(#%require "../lib.rkt")
+(#%require sicp-lib)
+(#%require sicp-lib/symbolic)
 
 
 
