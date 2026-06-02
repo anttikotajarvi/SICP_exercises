@@ -10,9 +10,6 @@
   (define (variable p) (car p))
   (define (term-list p) (cdr p))
 
-  ;; representation of terms and term lists
-  ;; (adjoin-term ... coeff) from text below)
-
   (define (add-poly p1 p2) 
     (if (same-variable? (variable p1) (variable p2))
         (make-poly (variable p1)
@@ -24,6 +21,10 @@
       (make-poly (variable p1)
                  (mul-terms (term-list p1) (term-list p2)))
       (error "Polys not in same var: MUL-poly" (list p1 p2))))
+
+  ;; predicates
+  (put '=zero? '(polynomial) (lambda (p)
+    (=zero?-termlist (term-list p))))
 
   ;; interface
   (define (tag p) (attach-tag 'polynomial p))
