@@ -46,6 +46,13 @@
     (make-from-mag-ang (div (magnitude z1) (magnitude z2))
                        (sub (angle z1) (angle z2))))
 
+  (put 'negate '(complex)
+      (lambda (z)
+        (attach-tag tag 
+          (make-from-real-imag
+            (negate (real-part z))
+            (negate (imag-part z))))))
+
 	;; predicates
   (define (equ?-complex z1 z2)
     (and (equ? (real-part z1) (real-part z2))

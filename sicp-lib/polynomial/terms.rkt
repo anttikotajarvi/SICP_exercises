@@ -1,4 +1,6 @@
 #lang sicp
+
+(#%require sicp-lib/arithmetic)
 (define (adjoin-term term term-list)
   (if (=zero? (coeff term)) 
       term-list
@@ -13,14 +15,27 @@
          (=zero?-termlist (rest-terms terms)))
         (else false)))
 
+(define (negate-termlist terms)
+  (if (empty-termlist? terms)
+      the-empty-termlist
+      (adjoin-term
+       (negate-term (first-term terms))
+       (negate-termlist (rest-terms terms)))))
+
 (define (make-term order coeff) (list order coeff))
 (define (order term) (car term))
 (define (coeff term) (cadr term))
 (define (=zero?-term term) (=zero? (coeff term)))
 
+(define (negate-term) 
+  (make-term (order term) 
+             (negate (coeff term))))
+
 (#%provide adjoin-term the-the-empty-termlist first-term
            rest-terms empty-termlist? make-term order coeff
-           add-terms mul-terms)
+           negate-term negate-termlist sub-terms add-terms mul-terms)
+
+(define (sub-terms L1 L2) (add-terms L1 (negate-termlist L2)))
 
 (define (add-terms L1 L2)
   (cond [(empty-termlist? L1) L2]

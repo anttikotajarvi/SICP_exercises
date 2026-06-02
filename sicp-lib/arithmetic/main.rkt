@@ -22,6 +22,8 @@
 
 (define (square-root x) (apply-generic 'square-root x))
 
+(define (negate x) (apply-generic 'negate x))
+
 (#%provide add sub mul div square-g
            equ? =zero?
            cosine sine arctangent square-root)

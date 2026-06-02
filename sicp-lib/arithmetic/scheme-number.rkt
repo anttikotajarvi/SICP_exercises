@@ -28,6 +28,8 @@
   (put 'equ? '(scheme-number scheme-number) =)
   (put '=zero? '(scheme-number) (lambda (x) (= x 0)))
 
+  (put 'negate '(scheme-number) (lambda (x) (attach-tag tag (- x))))
+
   (put 'make 'scheme-number (lambda (x) (attach-tag tag x)))
 
   'done)

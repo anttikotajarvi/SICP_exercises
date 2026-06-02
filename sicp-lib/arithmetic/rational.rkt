@@ -55,6 +55,11 @@
   (put 'equ? '(rational rational) equ?-rat)
   (put '=zero? '(rational rational) '=zero?-rat)
 
+  ;; For a negative rational number both denom and numer
+  ;;  ought to be negative.
+  (put 'negate '(rational) (lambda (x) 
+    (attach-tag tag (make-rat (- (numer x))
+                              (- (denom x))))))
 
   (put 'make 'rational
        (lambda (n d) (attach-tag tag (make-rat n d))))
