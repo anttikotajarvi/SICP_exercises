@@ -2,7 +2,7 @@
 ; Chapter: Building Abstractions with Data
 ; Section: Systems with Generic Operations
 ; Subsection: Example: Symbolic Algebra
-; Exercise 2.83: 
+; Exercise 2.87: 
 ; Install '=zero?' for polynomials in the generic arithmetic 
 ;  package.  This will allow 'adjoin-zero' to work for 
 ;  polynomials with coefficients that are themselves polynomials.
