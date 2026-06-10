@@ -28,6 +28,22 @@
       (make-poly (variable p1)
                  (mul-terms (term-list p1) (term-list p2)))
       (error "Polys not in same var: MUL-poly" (list p1 p2))))
+      
+  ;, Exercise 2.91
+  (define (div-poly p1 p2)
+  (if (same-variable? (variable p1) (variable p2))
+      (if (empty-termlist? (term-list p2))
+          (error "Division by zero polynomial: DIV-POLY" p2)
+          (let* ([var (variable p1)]
+                 [terms1 (term-list p1)]
+                 [terms2 (term-list p2)]
+                 [result (div-terms terms1 terms2)]
+                 [quotient-terms (car result)]
+                 [remainder-terms (cadr result)])
+            (list (make-poly var quotient-terms)
+                  (make-poly var remainder-terms))))
+      (error "Polys not in same variable: DIV-POLY"
+             (list p1 p2))))
 
   ;; predicates
   (put '=zero? '(polynomial) (lambda (p)
@@ -40,6 +56,9 @@
 
   (put 'mul '(polynomial polynomial) 
     (lambda (p1 p2) (tag (mul-poly p1 p2))))
+
+  (put 'div '(polynomial polynomial) 
+    (lambda (p1 p2) (tag (div-poly p1 p2))))
 
   (put 'make 'polynomial
     (lambda (var terms) (tag (make-poly var terms))))
